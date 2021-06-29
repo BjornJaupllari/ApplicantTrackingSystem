@@ -12,10 +12,10 @@ public class Company {
     @Column(nullable = false, updatable = false)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     private String name;
 
-    @Column(name = "address")
+    @Column(name = "address",nullable = false)
     private String address;
 
     @Column(name = "phone_number")
@@ -27,10 +27,10 @@ public class Company {
     @Column(name = "logo")
     private String logo;
 
-    @Column(name = "email")
+    @Column(name = "email",nullable = false )
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password",nullable = false)
     private String pasword;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")

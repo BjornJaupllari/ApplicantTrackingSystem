@@ -24,6 +24,7 @@ public class Applicant implements Serializable {
     private String comment;
 
     @OneToOne(fetch = FetchType.LAZY)
+
     @JoinColumn(name = "guest_id", referencedColumnName = "id")
     private Guest guestId;
 
@@ -32,6 +33,7 @@ public class Applicant implements Serializable {
     private User userId;
 
     @OneToOne(fetch = FetchType.LAZY)
+    @Column(nullable = false)
     @JoinColumn(name = "resume_id", referencedColumnName = "id")
     private Resume resume;
 
