@@ -7,6 +7,7 @@ import java.util.Date;
 @Entity
 @Table(name = "interview")
 public class Interview {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
