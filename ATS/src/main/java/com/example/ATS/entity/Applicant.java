@@ -20,13 +20,19 @@ public class Applicant implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="guest_id")
-
-    @Column(name="user_id")
-
-    @Column(name="cv_id")
-
-    @Column(name="comment")
+    @Column(name = "comment")
     private String comment;
+
+    @OneToOne
+    @JoinColumn(name = "guest_id", referencedColumnName = "id")
+    private Guest guestId;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User userId;
+
+    @OneToOne
+    @JoinColumn(name = "resume_id", referencedColumnName = "id")
+    private Resume resume;
 
 }
