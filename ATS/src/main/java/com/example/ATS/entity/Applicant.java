@@ -23,15 +23,15 @@ public class Applicant implements Serializable {
     @Column(name = "comment")
     private String comment;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guest_id", referencedColumnName = "id")
     private Guest guestId;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User userId;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "resume_id", referencedColumnName = "id")
     private Resume resume;
 
