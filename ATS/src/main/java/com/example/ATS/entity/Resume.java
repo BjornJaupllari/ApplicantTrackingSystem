@@ -20,8 +20,8 @@ public class Resume implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "rasume")
-    private SSSS resume;
+    @Lob
+    private byte[] resume;
 
     @Column(name = "skills")
     private String skills;
