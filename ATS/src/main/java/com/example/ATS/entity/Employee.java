@@ -9,13 +9,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Employ")
+@Table(name = "employee")
 @Setter
 @Getter
 @NoArgsConstructor
 @ToString
 
-public class Employ implements Serializable{
+public class Employee implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class Employ implements Serializable{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id",referencedColumnName = "id")
-    private Company companyid;
+    private Company company;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private User userid;
+    private User user;
 
 }

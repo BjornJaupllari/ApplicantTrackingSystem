@@ -2,7 +2,6 @@ package com.example.ATS.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 @Entity
@@ -16,24 +15,23 @@ public class Post {
     private int id;
 
     @Column(name = "contact")
-    private Contact contact;
+    private String contact;
 
     @Column(name = "job_title")
-    private String jobtitle;
+    private String jobTitle;
 
     @Column(name = "expiration_date")
-    private ExpirationDate expirationDate;
+    private Date expirationDate;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "type_id")
     private Type type;
 
-
     @Column(name = "work_experience")
-    private WorkExperience workExperience;
+    private int workExperience;
 
-    @Column(name = "departament")
-    private String departament;
+    @Column(name = "department")
+    private String department;
 
 //    @Column(name = "attachment")
 //    private String attachment;
@@ -53,6 +51,4 @@ public class Post {
     private Interview interview;
 
 
-    public Post() {
-    }
 }
