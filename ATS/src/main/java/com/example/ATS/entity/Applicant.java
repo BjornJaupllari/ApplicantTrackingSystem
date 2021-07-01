@@ -26,11 +26,11 @@ public class Applicant implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
 
     @JoinColumn(name = "guest_id", referencedColumnName = "id")
-    private Guest guestId;
+    private Guest guest;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User userId;
+    private User user;
 
     @OneToOne(fetch = FetchType.LAZY)
     @Column(nullable = false)
