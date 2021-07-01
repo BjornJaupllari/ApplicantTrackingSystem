@@ -19,7 +19,7 @@ public class Type implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "name")
+    private String name;
 
 }

@@ -8,6 +8,6 @@ import lombok.Setter;
 public class StatusDto {
 
     private int id;
-    private String status;
+    private String name;
 
 }

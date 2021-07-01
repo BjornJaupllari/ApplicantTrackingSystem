@@ -8,6 +8,6 @@ import lombok.Setter;
 public class TypeDto {
 
     private int id;
-    private String type;
+    private String name;
 
 }
