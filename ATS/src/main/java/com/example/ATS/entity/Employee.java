@@ -9,24 +9,24 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "guest")
+@Table(name = "employee")
 @Setter
 @Getter
 @NoArgsConstructor
 @ToString
-public class Guest implements Serializable {
+
+public class Employee implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "first_name",nullable = false)
-    private String firstName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id",referencedColumnName = "id")
+    private Company company;
 
-    @Column(name = "last_name",nullable = false)
-    private String lastName;
-
-    @Column(name = "email",nullable = false)
-    private String email;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User user;
 
 }
