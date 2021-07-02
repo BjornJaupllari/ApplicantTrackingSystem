@@ -3,6 +3,7 @@ package com.example.ATS.mapper;
 import com.example.ATS.dto.*;
 import com.example.ATS.entity.*;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface MapStructMapper {

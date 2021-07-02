@@ -31,7 +31,7 @@ public class Company {
     private String email;
 
     @Column(name = "password",nullable = false)
-    private String pasword;
+    private String password;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
     private List<Post> posts;
@@ -42,7 +42,9 @@ public class Company {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
     private List<Interview> interviews;
 
-    public Company(int id, String name, String address, long phoneNumber, String website, byte[] logo, String email, String pasword, List<Post> posts, List<Employee> employees, List<Interview> interviews) {
+
+    public Company(int id, String name, String address, long phoneNumber, String website, String logo, String email, String password, List<Post> posts, List<Employee> employees, List<Interview> interviews) {
+
         this.id = id;
         this.name = name;
         this.address = address;
@@ -50,7 +52,7 @@ public class Company {
         this.website = website;
         this.logo = logo;
         this.email = email;
-        this.pasword = pasword;
+        this.password = password;
         this.posts = posts;
         this.employees = employees;
         this.interviews = interviews;
@@ -116,12 +118,12 @@ public class Company {
         this.email = email;
     }
 
-    public String getPasword() {
-        return pasword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasword(String pasword) {
-        this.pasword = pasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public List<Post> getPosts() {
@@ -158,7 +160,7 @@ public class Company {
                 ", website='" + website + '\'' +
                 ", logo='" + logo + '\'' +
                 ", email='" + email + '\'' +
-                ", pasword='" + pasword + '\'' +
+                ", password='" + password + '\'' +
                 ", posts=" + posts +
                 ", employees=" + employees +
                 ", interviews=" + interviews +
