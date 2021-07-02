@@ -25,7 +25,7 @@ public class Company {
     private String website;
 
     @Column(name = "logo")
-    private String logo;
+    private byte[] logo;
 
     @Column(name = "email",nullable = false )
     private String email;
@@ -42,7 +42,7 @@ public class Company {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
     private List<Interview> interviews;
 
-    public Company(int id, String name, String address, long phoneNumber, String website, String logo, String email, String pasword, List<Post> posts, List<Employee> employees, List<Interview> interviews) {
+    public Company(int id, String name, String address, long phoneNumber, String website, byte[] logo, String email, String pasword, List<Post> posts, List<Employee> employees, List<Interview> interviews) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -100,11 +100,11 @@ public class Company {
         this.website = website;
     }
 
-    public String getLogo() {
+    public byte[] getLogo() {
         return logo;
     }
 
-    public void setLogo(String logo) {
+    public void setLogo(byte[] logo) {
         this.logo = logo;
     }
 

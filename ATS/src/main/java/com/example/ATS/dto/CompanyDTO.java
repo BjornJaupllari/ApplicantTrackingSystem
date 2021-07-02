@@ -15,7 +15,7 @@ public class CompanyDTO {
     private String address;
     private String phoneNumber;
     private String website;
-    private String logo;
+    private byte [] logo;
     private String email;
     private String password;
     private Post post;
