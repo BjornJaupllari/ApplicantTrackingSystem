@@ -33,7 +33,6 @@ public class Applicant implements Serializable {
     private User user;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     @JoinColumn(name = "resume_id", referencedColumnName = "id")
     private Resume resume;
 

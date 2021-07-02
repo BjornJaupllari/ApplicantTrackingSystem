@@ -1,11 +1,9 @@
 package com.example.ATS.dto;
 
 import com.example.ATS.entity.Role;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class UserDto {
 
     private int id;
@@ -15,6 +13,7 @@ public class UserDto {
     private String email;
     private String password;
     private char gender;
+    private int age;
     private Role roles;
 
 }
