@@ -33,8 +33,8 @@ public class Post {
     @Column(name = "department")
     private String department;
 
-//    @Column(name = "attachment")
-//    private String attachment;
+    @Column(name = "attachment")
+    private Byte[] attachment;
 
     @Column(name = "description")
     private String description;
@@ -43,7 +43,7 @@ public class Post {
     private String location;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "company_id")
+    @JoinColumn(name = "company_id")
     private Company company;
 
     @ManyToOne(fetch = FetchType.LAZY)

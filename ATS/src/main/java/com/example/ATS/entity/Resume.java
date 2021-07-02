@@ -21,6 +21,7 @@ public class Resume implements Serializable {
     private int id;
 
     @Lob
+    @Column(name = "resume")
     private byte[] resume;
 
     @Column(name = "skills")
