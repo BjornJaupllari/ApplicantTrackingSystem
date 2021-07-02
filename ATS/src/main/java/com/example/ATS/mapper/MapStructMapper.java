@@ -43,9 +43,9 @@ public interface MapStructMapper {
 
     Employee employeeToEntity(EmployeeDto employeeDto);
 
-    CompanyDTO companyDto(Company company);
+    CompanyDto companyDto(Company company);
 
-    Company companyToEntity(CompanyDTO companyDto);
+    Company companyToEntity(CompanyDto companyDto);
 
     ApplicantDto applicantToDto(Applicant applicant);
 
