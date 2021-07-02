@@ -40,7 +40,7 @@ public class User implements Serializable {
     private int age;
 
     @Column(name = "gender")
-    private Character gender;
+    private char gender;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
