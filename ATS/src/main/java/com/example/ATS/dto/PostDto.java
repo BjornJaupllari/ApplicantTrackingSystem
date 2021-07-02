@@ -23,4 +23,5 @@ public class PostDto {
     private Company company;
     private Interview interview;
 
+
 }
