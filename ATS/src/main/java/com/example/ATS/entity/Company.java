@@ -50,7 +50,7 @@ public class Company {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.website = website;
-        this.logo = logo;
+//        this.logo = logo;
         this.email = email;
         this.password = password;
         this.posts = posts;
