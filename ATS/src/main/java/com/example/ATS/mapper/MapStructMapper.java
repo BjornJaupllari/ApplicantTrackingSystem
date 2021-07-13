@@ -12,13 +12,13 @@ public interface MapStructMapper {
 
     User userToEntity(UserDto userDto);
 
-    TypeDto typeToDto(Type type);
-
-    Type typeToEntity(TypeDto typeDto);
-
-    Status statusToDto(Status status);
-
-    Status statusToEntity(StatusDto statusDto);
+//    TypeDto typeToDto(Type type);
+//
+//    Type typeToEntity(TypeDto typeDto);
+//
+//    Status statusToDto(Status status);
+//
+//    Status statusToEntity(StatusDto statusDto);
 
     RoleDto roleToDto(Role role);
 
@@ -28,25 +28,25 @@ public interface MapStructMapper {
 
     Resume resumeToEntity(ResumeDto resumeDto);
 
-    PostDto postToDto(Post post);
+//    PostDto postToDto(Post post);
+//
+//    Post postToEntity(PostDto postDto);
 
-    Post postToEntity(PostDto postDto);
-
-    InterviewDto interviewToDto(Interview interview);
-
-    Interview interviewToEntity(InterviewDto interviewDto);
+//    InterviewDto interviewToDto(Interview interview);
+//
+//    Interview interviewToEntity(InterviewDto interviewDto);
 
     GuestDto guestToDto(Guest guest);
 
     Guest guestToEntity(GuestDto guestDto);
 
-    EmployeeDto employeeToDto(Employee employee);
-
-    Employee employeeToEntity(EmployeeDto employeeDto);
-
-    CompanyDto companyDto(Company company);
-
-    Company companyToEntity(CompanyDto companyDto);
+//    EmployeeDto employeeToDto(Employee employee);
+//
+//    Employee employeeToEntity(EmployeeDto employeeDto);
+//
+//    CompanyDto companyDto(Company company);
+//
+//    Company companyToEntity(CompanyDto companyDto);
 
     ApplicantDto applicantToDto(Applicant applicant);
 

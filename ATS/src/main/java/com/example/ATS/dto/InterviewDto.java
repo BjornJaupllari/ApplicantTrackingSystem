@@ -4,13 +4,13 @@ import com.example.ATS.entity.Applicant;
 import com.example.ATS.entity.Company;
 import com.example.ATS.entity.Post;
 import com.example.ATS.entity.Status;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
 
-@Getter
-@Setter
+@Data
 public class InterviewDto {
 
     private int id;
