@@ -11,45 +11,25 @@ import java.util.List;
 public interface MapStructMapper {
 
     UserDto userToDto(User user);
-
+    List<UserDto> toUserDtos(List<User>users);
     User userToEntity(UserDto userDto);
 
-//    TypeDto typeToDto(Type type);
-//
-//    Type typeToEntity(TypeDto typeDto);
-//
-//    Status statusToDto(Status status);
-//
-//    Status statusToEntity(StatusDto statusDto);
 
     RoleDto roleToDto(Role role);
-
+    List<RoleDto> toRoleDtos(List<Role>roles);
     Role roleToEntity(RoleDto roleDto);
 
     ResumeDto resumeToDto(Resume resume);
-
+    List<ResumeDto> toResumeDtos(List<Resume>resumes);
     Resume resumeToEntity(ResumeDto resumeDto);
 
-//    PostDto postToDto(Post post);
-//
-//    Post postToEntity(PostDto postDto);
-
-//    InterviewDto interviewToDto(Interview interview);
-//
-//    Interview interviewToEntity(InterviewDto interviewDto);
 
     GuestDto guestToDto(Guest guest);
     List<GuestDto> toGuestDtos(List<Guest>guests);
 
     Guest guestToEntity(GuestDto guestDto);
 
-//    EmployeeDto employeeToDto(Employee employee);
-//
-//    Employee employeeToEntity(EmployeeDto employeeDto);
-//
-//    CompanyDto companyDto(Company company);
-//
-//    Company companyToEntity(CompanyDto companyDto);
+
 
     ApplicantDto applicantToDto(Applicant applicant);
     List<ApplicantDto> toApplicantDtos(List<Applicant>applicants);
