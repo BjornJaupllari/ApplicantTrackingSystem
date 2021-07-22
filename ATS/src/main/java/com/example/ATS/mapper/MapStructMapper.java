@@ -5,6 +5,8 @@ import com.example.ATS.entity.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface MapStructMapper {
 
@@ -37,6 +39,7 @@ public interface MapStructMapper {
 //    Interview interviewToEntity(InterviewDto interviewDto);
 
     GuestDto guestToDto(Guest guest);
+    List<GuestDto> toGuestDtos(List<Guest>guests);
 
     Guest guestToEntity(GuestDto guestDto);
 
@@ -49,6 +52,7 @@ public interface MapStructMapper {
 //    Company companyToEntity(CompanyDto companyDto);
 
     ApplicantDto applicantToDto(Applicant applicant);
+    List<ApplicantDto> toApplicantDtos(List<Applicant>applicants);
 
     Applicant applicantToEntity(ApplicantDto applicantDto);
 
