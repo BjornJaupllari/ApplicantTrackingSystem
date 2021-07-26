@@ -1,7 +1,7 @@
 package com.example.ATS.controller;
 
 
-import com.example.ATS.Service.UserService;
+import com.example.ATS.service.UserService;
 import com.example.ATS.dto.UserDto;
 import com.example.ATS.entity.User;
 import com.example.ATS.mapper.MapStructMapper;

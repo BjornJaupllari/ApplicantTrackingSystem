@@ -1,7 +1,7 @@
 package com.example.ATS.controller;
 
 
-import com.example.ATS.Service.ResumeService;
+import com.example.ATS.service.ResumeService;
 import com.example.ATS.dto.ResumeDto;
 import com.example.ATS.entity.Resume;
 import com.example.ATS.mapper.MapStructMapper;

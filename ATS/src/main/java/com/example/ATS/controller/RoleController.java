@@ -1,6 +1,6 @@
 package com.example.ATS.controller;
 
-import com.example.ATS.Service.RoleService;
+import com.example.ATS.service.RoleService;
 import com.example.ATS.dto.RoleDto;
 import com.example.ATS.entity.Role;
 import com.example.ATS.mapper.MapStructMapper;

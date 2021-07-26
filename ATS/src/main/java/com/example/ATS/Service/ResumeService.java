@@ -1,4 +1,4 @@
-package com.example.ATS.Service;
+package com.example.ATS.service;
 
 import com.example.ATS.entity.Resume;
 import com.example.ATS.repository.ResumeRepository;
