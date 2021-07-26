@@ -26,20 +26,20 @@ public class ResumeController {
     }
 
     @PostMapping
-    public ResponseEntity<ResumeDto> create(@RequestBody ResumeDto resumeDto){
+    public ResponseEntity<ResumeDto> create(@RequestBody ResumeDto resumeDto) {
         resumeService.save(mapStructMapper.resumeToEntity(resumeDto));
         return ResponseEntity.status(HttpStatus.CREATED).body(resumeDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResumeDto> findById(@PathVariable int id){
+    public ResponseEntity<ResumeDto> findById(@PathVariable int id) {
         Optional<Resume> resume = resumeService.findById(id);
         return ResponseEntity.ok(mapStructMapper.resumeToDto(resume.get()));
     }
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResumeDto> update(@PathVariable int id, @RequestBody ResumeDto resumeDto){
+    public ResponseEntity<ResumeDto> update(@PathVariable int id, @RequestBody ResumeDto resumeDto) {
         Resume resume = mapStructMapper.resumeToEntity(resumeDto);
         resume.setId(id);
 
@@ -48,7 +48,7 @@ public class ResumeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable int id){
+    public ResponseEntity delete(@PathVariable int id) {
         resumeService.deleteById(id);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }

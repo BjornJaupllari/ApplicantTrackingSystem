@@ -1,8 +1,6 @@
 package com.example.ATS.service;
 
-import com.example.ATS.entity.Applicant;
 import com.example.ATS.entity.Guest;
-import com.example.ATS.repository.ApplicantRepository;
 import com.example.ATS.repository.GuestRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,20 +18,22 @@ public class GuestServices {
 
 
     // getall
-    public List<Guest> getAll(){
+    public List<Guest> getAll() {
         return guestRepository.findAll();
     }
     //GetCompByd
 
-    public Optional<Guest> findById(int id){
+    public Optional<Guest> findById(int id) {
         return guestRepository.findById(id);
     }
+
     //save
-    public Guest save(@RequestBody Guest guest){
+    public Guest save(@RequestBody Guest guest) {
         return guestRepository.save(guest);
     }
+
     //delete
-    public void deleteById(int id){
+    public void deleteById(int id) {
         guestRepository.deleteById(id);
     }
 }

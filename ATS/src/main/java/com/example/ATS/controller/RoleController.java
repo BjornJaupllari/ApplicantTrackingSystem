@@ -26,20 +26,20 @@ public class RoleController {
     }
 
     @PostMapping
-    public ResponseEntity<RoleDto> create(@RequestBody RoleDto roleDto){
+    public ResponseEntity<RoleDto> create(@RequestBody RoleDto roleDto) {
         roleService.save(mapStructMapper.roleToEntity(roleDto));
         return ResponseEntity.status(HttpStatus.CREATED).body(roleDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<RoleDto> findById(@PathVariable int id){
+    public ResponseEntity<RoleDto> findById(@PathVariable int id) {
         Optional<Role> role = roleService.findById(id);
         return ResponseEntity.ok(mapStructMapper.roleToDto(role.get()));
     }
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<RoleDto> update(@PathVariable int id, @RequestBody RoleDto roleDto){
+    public ResponseEntity<RoleDto> update(@PathVariable int id, @RequestBody RoleDto roleDto) {
         Role role = mapStructMapper.roleToEntity(roleDto);
         role.setId(id);
 
@@ -48,7 +48,7 @@ public class RoleController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable int id){
+    public ResponseEntity delete(@PathVariable int id) {
         roleService.deleteById(id);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
