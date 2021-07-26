@@ -19,20 +19,22 @@ public class ApplicantServices {
 
 
     // getall
-    public List<Applicant> getAll(){
+    public List<Applicant> getAll() {
         return applicantRepository.findAll();
     }
     //GetCompByd
 
-    public Optional<Applicant> findById(int id){
+    public Optional<Applicant> findById(int id) {
         return applicantRepository.findById(id);
     }
+
     //save
-    public Applicant save(@RequestBody Applicant applicant){
+    public Applicant save(@RequestBody Applicant applicant) {
         return applicantRepository.save(applicant);
     }
+
     //delete
-    public void deleteById(int id){
+    public void deleteById(int id) {
         applicantRepository.deleteById(id);
     }
 }

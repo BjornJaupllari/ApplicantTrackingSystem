@@ -21,15 +21,17 @@ public class ApplicantController {
     @Autowired
     private final ApplicantServices applicantServices;
     private final MapStructMapper mapStructMapper;
+
     @GetMapping
-    public ResponseEntity<List<ApplicantDto>>findall(){
+    public ResponseEntity<List<ApplicantDto>> findall() {
         return ResponseEntity.ok(mapStructMapper.toApplicantDtos(applicantServices.getAll()));
     }
+
     @PostMapping
     public ResponseEntity<ApplicantDto> create(@RequestBody ApplicantDto applicantDto) {
         applicantServices.save(mapStructMapper.applicantToEntity(applicantDto));
 
-        return ResponseEntity.status( HttpStatus.CREATED).body(applicantDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(applicantDto);
     }
 
     @GetMapping("/{id}")

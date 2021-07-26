@@ -21,24 +21,24 @@ public class UserController {
     private final MapStructMapper mapStructMapper;
 
     @GetMapping
-    private ResponseEntity<List<UserDto>> findAll(){
+    private ResponseEntity<List<UserDto>> findAll() {
         return ResponseEntity.ok(mapStructMapper.toUserDtos(userService.findAll()));
     }
 
     @PostMapping
-    public ResponseEntity<UserDto> create(@RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> create(@RequestBody UserDto userDto) {
         userService.save((mapStructMapper.userToEntity(userDto)));
         return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> findById(@PathVariable int id){
+    public ResponseEntity<UserDto> findById(@PathVariable int id) {
         Optional<User> user = userService.findById(id);
         return ResponseEntity.ok(mapStructMapper.userToDto(user.get()));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDto> update(@PathVariable int id, @RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> update(@PathVariable int id, @RequestBody UserDto userDto) {
         User user = mapStructMapper.userToEntity(userDto);
         user.setId(id);
 
@@ -47,11 +47,10 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable int id){
+    public ResponseEntity delete(@PathVariable int id) {
         userService.deleteById(id);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
-
 
 
 }

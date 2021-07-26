@@ -1,7 +1,6 @@
 package com.example.ATS.Service;
 
 
-
 import com.example.ATS.entity.User;
 import com.example.ATS.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
