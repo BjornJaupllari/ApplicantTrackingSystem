@@ -3,18 +3,19 @@ package com.example.ATS.service;
 
 import com.example.ATS.entity.Role;
 import com.example.ATS.repository.RoleRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@NoArgsConstructor
 @RequiredArgsConstructor
 @Service
-
 public class RoleService {
 
-    private final RoleRepository roleRepository;
+    private RoleRepository roleRepository;
 
     public List<Role> findAll() {
         return roleRepository.findAll();

@@ -2,16 +2,17 @@ package com.example.ATS.service;
 
 import com.example.ATS.entity.Resume;
 import com.example.ATS.repository.ResumeRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@NoArgsConstructor
 @RequiredArgsConstructor
 @Service
 public class ResumeService {
-    private final ResumeRepository resumeRepository;
+    private  ResumeRepository resumeRepository;
 
     public List<Resume> findAll() {
         return resumeRepository.findAll();

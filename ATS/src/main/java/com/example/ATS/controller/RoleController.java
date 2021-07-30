@@ -1,9 +1,9 @@
 package com.example.ATS.controller;
 
-import com.example.ATS.service.RoleService;
 import com.example.ATS.dto.RoleDto;
 import com.example.ATS.entity.Role;
 import com.example.ATS.mapper.MapStructMapper;
+import com.example.ATS.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +17,8 @@ import java.util.Optional;
 @RequestMapping("/api/vi/role")
 public class RoleController {
 
-    private final RoleService roleService;
-    private final MapStructMapper mapStructMapper;
+    private RoleService roleService;
+    private MapStructMapper mapStructMapper;
 
     @GetMapping
     private ResponseEntity<List<RoleDto>> findAll() {
@@ -39,9 +39,9 @@ public class RoleController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<RoleDto> update(@PathVariable int id, @RequestBody RoleDto roleDto) {
+    public ResponseEntity<RoleDto> update(@RequestBody RoleDto roleDto) {
         Role role = mapStructMapper.roleToEntity(roleDto);
-        role.setId(id);
+
 
         roleService.save(role);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(roleDto);

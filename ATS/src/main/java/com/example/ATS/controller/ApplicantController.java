@@ -19,8 +19,8 @@ import java.util.Optional;
 public class ApplicantController {
 
     @Autowired
-    private final ApplicantServices applicantServices;
-    private final MapStructMapper mapStructMapper;
+    private  ApplicantServices applicantServices;
+    private  MapStructMapper mapStructMapper;
 
     @GetMapping
     public ResponseEntity<List<ApplicantDto>> findall() {
@@ -42,9 +42,8 @@ public class ApplicantController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApplicantDto> update(@PathVariable int id, @RequestBody ApplicantDto applicantDto) {
+    public ResponseEntity<ApplicantDto> update(@RequestBody ApplicantDto applicantDto) {
         Applicant applicant = mapStructMapper.applicantToEntity(applicantDto);
-        applicant.setId(id);
 
         applicantServices.save(applicant);
 
