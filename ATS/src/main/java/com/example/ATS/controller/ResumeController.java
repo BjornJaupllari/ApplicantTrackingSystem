@@ -17,8 +17,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/vi/resume")
 public class ResumeController {
-    private final ResumeService resumeService;
-    private final MapStructMapper mapStructMapper;
+    private ResumeService resumeService;
+    private MapStructMapper mapStructMapper;
 
     @GetMapping
     private ResponseEntity<List<ResumeDto>> findAll() {
@@ -39,9 +39,9 @@ public class ResumeController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResumeDto> update(@PathVariable int id, @RequestBody ResumeDto resumeDto) {
+    public ResponseEntity<ResumeDto> update( @RequestBody ResumeDto resumeDto) {
         Resume resume = mapStructMapper.resumeToEntity(resumeDto);
-        resume.setId(id);
+
 
         resumeService.save(resume);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(resumeDto);

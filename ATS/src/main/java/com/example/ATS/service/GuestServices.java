@@ -2,6 +2,7 @@ package com.example.ATS.service;
 
 import com.example.ATS.entity.Guest;
 import com.example.ATS.repository.GuestRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,11 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import java.util.Optional;
 
+@NoArgsConstructor
 @Service
 @RequiredArgsConstructor
 public class GuestServices {
     @Autowired
-    private final GuestRepository guestRepository;
+    private GuestRepository guestRepository;
 
 
     // getall

@@ -1,10 +1,10 @@
 package com.example.ATS.controller;
 
 
-import com.example.ATS.service.UserService;
 import com.example.ATS.dto.UserDto;
 import com.example.ATS.entity.User;
 import com.example.ATS.mapper.MapStructMapper;
+import com.example.ATS.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +17,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/vi/user")
 public class UserController {
-    private final UserService userService;
-    private final MapStructMapper mapStructMapper;
+    private UserService userService;
+    private MapStructMapper mapStructMapper;
 
     @GetMapping
     private ResponseEntity<List<UserDto>> findAll() {
@@ -38,10 +38,8 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDto> update(@PathVariable int id, @RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> update(@RequestBody UserDto userDto) {
         User user = mapStructMapper.userToEntity(userDto);
-        user.setId(id);
-
         userService.save(user);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userDto);
     }

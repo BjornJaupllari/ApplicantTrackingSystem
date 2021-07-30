@@ -5,7 +5,6 @@ import com.example.ATS.dto.GuestDto;
 import com.example.ATS.entity.Guest;
 import com.example.ATS.mapper.MapStructMapper;
 import com.example.ATS.service.GuestServices;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/guest")
 
 public class GuestController {
+    private GuestServices guestServices;
+    private MapStructMapper mapStructMapper;
+
     @Autowired
-    private final GuestServices guestServices;
-    private final MapStructMapper mapStructMapper;
+    public GuestController(GuestServices guestServices) {
+        this.guestServices = guestServices;
+    }
 
     @GetMapping
     public ResponseEntity<List<GuestDto>> findall() {
@@ -44,9 +45,8 @@ public class GuestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<GuestDto> update(@PathVariable int id, @RequestBody GuestDto guestDto) {
+    public ResponseEntity<GuestDto> update( @RequestBody GuestDto guestDto) {
         Guest guest = mapStructMapper.guestToEntity(guestDto);
-        guest.setId(id);
 
         guestServices.save(guest);
 
